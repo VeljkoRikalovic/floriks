@@ -365,10 +365,10 @@ export const works: Work[] = [
     },
   },
   {
-    slug: "montewayzz",
+    slug: "montewayz",
     no: "C",
-    domain: "Montewayzz",
-    url: "https://activemontenegro.netlify.app/",
+    domain: "Montewayz",
+    url: "https://montewayz.netlify.app/",
     type: "Sajt · turistička agencija",
     need: "Turistička agencija koja organizuje ture po Crnoj Gori. Trebao joj je sajt koji predstavlja ture i vodi posetioca do rezervacije.",
     done: [
@@ -377,10 +377,10 @@ export const works: Work[] = [
       "Dugme za rezervaciju avanture uvek vidljivo u meniju",
     ],
     screenshot: {
-      src: "/radovi/montewayzz.png",
-      width: 1906,
-      height: 901,
-      alt: "Početna strana sajta Montewayzz: planinski pejzaž Crne Gore i naslov Experience Montenegro Your Way",
+      src: "/radovi/montewayz.jpg",
+      width: 1280,
+      height: 800,
+      alt: "Početna strana sajta Montewayz: planinski pejzaž Crne Gore i naslov Doživi Crnu Goru na tvoj način",
     },
   },
 ];
