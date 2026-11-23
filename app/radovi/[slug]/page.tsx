@@ -86,13 +86,47 @@ export default async function WorkPage({ params }: Params) {
           ))}
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-12">
-          <div className="placeholder-box flex aspect-[4/3] items-center justify-center p-6 text-center md:col-span-5">
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink/60">[Snimak ekrana: mobilni prikaz, 390×844 px]</p>
-          </div>
-          <div className="placeholder-box flex aspect-[4/3] items-center justify-center p-6 text-center md:col-span-7">
-            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink/60">[Snimak ekrana: ključna stranica, npr. proizvod ili kontakt]</p>
-          </div>
+        <div className="mt-20 grid items-start gap-12 md:grid-cols-12 md:gap-10">
+          {/* mobilni prikaz */}
+          <figure className="md:col-span-4">
+            <div className="mx-auto max-w-[300px] border border-ink p-2">
+              <div className="mb-2 flex justify-center">
+                <span className="h-1 w-10 bg-ink/25" />
+              </div>
+              <Image
+                src={w.mobile.src}
+                width={w.mobile.width}
+                height={w.mobile.height}
+                alt={w.mobile.alt}
+                sizes="300px"
+                className="h-auto w-full border border-ink/15"
+              />
+            </div>
+            {w.mobile.caption && (
+              <figcaption className="mx-auto mt-3 max-w-[300px] font-mono text-[10px] uppercase tracking-[0.14em] text-ink/50">
+                <span className="text-signal">01</span> · {w.mobile.caption}
+              </figcaption>
+            )}
+          </figure>
+
+          {/* još jedna stranica */}
+          <figure className="md:col-span-8">
+            <div className="border border-ink p-2">
+              <Image
+                src={w.detail.src}
+                width={w.detail.width}
+                height={w.detail.height}
+                alt={w.detail.alt}
+                sizes="(min-width: 1400px) 860px, (min-width: 768px) 62vw, 94vw"
+                className="h-auto w-full border border-ink/15"
+              />
+            </div>
+            {w.detail.caption && (
+              <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/50">
+                <span className="text-signal">02</span> · {w.detail.caption}
+              </figcaption>
+            )}
+          </figure>
         </div>
       </section>
 

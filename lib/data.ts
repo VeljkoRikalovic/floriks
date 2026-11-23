@@ -314,6 +314,8 @@ export const services: Service[] = [
 export const getService = (slug: string) =>
   services.find((s) => s.slug === slug);
 
+export type Shot = { src: string; width: number; height: number; alt: string; caption?: string };
+
 export type Work = {
   slug: string;
   no: string;
@@ -322,7 +324,11 @@ export type Work = {
   type: string;
   need: string;
   done: string[];
-  screenshot: { src: string; width: number; height: number; alt: string };
+  screenshot: Shot;
+  /** Mobilni prikaz */
+  mobile: Shot;
+  /** Još jedna stranica ili deo sajta */
+  detail: Shot;
 };
 
 export const works: Work[] = [
@@ -344,6 +350,20 @@ export const works: Work[] = [
       height: 893,
       alt: "Početna strana prikazipod.rs: ista dnevna soba pre i posle, sa novim podom i izborom vrste hrasta",
     },
+    mobile: {
+      src: "/radovi/prikazipod-mobilni.png",
+      width: 385,
+      height: 810,
+      alt: "prikazipod.rs na telefonu: tri koraka od stranice proizvoda do prostorije kupca",
+      caption: "Mobilni prikaz · tri koraka",
+    },
+    detail: {
+      src: "/radovi/prikazipod-zid.png",
+      width: 1539,
+      height: 665,
+      alt: "Prikaži zid: ista prostorija pre i posle, sa zidnom oblogom od cigle na izabranom zidu",
+      caption: "Prikaži zid · zidne obloge na zidu koji kupac izabere",
+    },
   },
   {
     slug: "autooprema",
@@ -363,6 +383,20 @@ export const works: Work[] = [
       height: 939,
       alt: "Landing stranica autooprema.net: pretraga po vozilu (marka, model, godište) i kategorije proizvoda",
     },
+    mobile: {
+      src: "/radovi/autooprema-mobilni.png",
+      width: 389,
+      height: 811,
+      alt: "autooprema.net na telefonu: pretraga po vozilu i kategorije proizvoda",
+      caption: "Mobilni prikaz · pretraga po vozilu",
+    },
+    detail: {
+      src: "/radovi/autooprema-rasprodaja.png",
+      width: 1898,
+      height: 668,
+      alt: "Sekcija Nedeljna rasprodaja na autooprema.net: proizvodi na akciji sa starom i novom cenom",
+      caption: "Nedeljna rasprodaja · proizvodi na akciji",
+    },
   },
   {
     slug: "montewayz",
@@ -381,6 +415,20 @@ export const works: Work[] = [
       width: 1280,
       height: 800,
       alt: "Početna strana sajta Montewayz: planinski pejzaž Crne Gore i naslov Doživi Crnu Goru na tvoj način",
+    },
+    mobile: {
+      src: "/radovi/montewayz-mobilni.png",
+      width: 390,
+      height: 811,
+      alt: "Montewayz na telefonu: galerija Iz naših avantura sa fotografijama sa tura",
+      caption: "Mobilni prikaz · galerija",
+    },
+    detail: {
+      src: "/radovi/montewayz-paketi.png",
+      width: 1915,
+      height: 910,
+      alt: "Sekcija Putevi Crne Gore na sajtu Montewayz: Paket Priroda, Paket Obala i Self-made paket",
+      caption: "Paketi tura · Priroda, Obala, Self-made",
     },
   },
 ];
